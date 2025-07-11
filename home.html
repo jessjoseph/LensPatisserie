@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lens Pâtisserie</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #fff;
+      color: #333;
+      padding-bottom: 80px;
+    }
+
+    header {
+      text-align: center;
+      padding: 10px;
+      background: #ffeaea;
+    }
+
+    .address {
+      font-size: 12px;
+      color: green;
+    }
+
+    .timing {
+      font-size: 12px;
+      color: #999;
+    }
+
+    .brand {
+      font-size: 20px;
+      font-weight: bold;
+      color: #993333;
+      margin-top: 5px;
+    }
+
+    .best-of-today {
+      padding: 10px;
+    }
+
+    .best-of-today h2 {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .best-item {
+      display: flex;
+      align-items: center;
+      background: #f9f9f9;
+      border-radius: 8px;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .best-item img {
+      width: 60px;
+      height: 60px;
+      border-radius: 6px;
+      margin-right: 10px;
+      object-fit: cover;
+    }
+
+    .item-title {
+      font-weight: bold;
+    }
+
+    .item-sub {
+      font-size: 12px;
+      color: #888;
+    }
+
+    .price {
+      font-weight: bold;
+      color: #333;
+    }
+
+    .quantity {
+      margin-left: auto;
+      font-size: 14px;
+    }
+
+    .category-tabs {
+      display: flex;
+      justify-content: space-around;
+      padding: 10px;
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .category-tabs button {
+      padding: 6px 10px;
+      border: none;
+      background: #eee;
+      border-radius: 15px;
+      cursor: pointer;
+    }
+
+    .category-tabs .active {
+      background: #d99191;
+      color: #fff;
+    }
+
+    .items-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      padding: 15px;
+    }
+
+    .item-card {
+      background: #fff5f5;
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+      position: relative;
+    }
+
+    .item-card img {
+      width: 100%;
+      border-radius: 8px;
+      height: 100px;
+      object-fit: cover;
+    }
+
+    .name {
+      font-weight: bold;
+      margin: 5px 0;
+    }
+
+    .type {
+      font-size: 12px;
+      color: #888;
+    }
+
+    .price {
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .add-btn {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: #aa4444;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      padding: 5px 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: #fff;
+      border-top: 1px solid #ddd;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <p class="address">248, 1st B main, 5th cross, 2nd Main, Ahmednagar, Bengaluru 560077</p>
+    <p class="timing">Daily 10AM-9PM</p>
+    <h1 class="brand">LENS PÂTISSERIE</h1>
+  </header>
+
+  <section class="best-of-today">
+    <h2>Best of Today</h2>
+    <div class="best-item">
+      <img src="brownies.jpg" alt="Brownies with bite of choco">
+      <div>
+        <p class="item-title">Brownies with bite of Choco</p>
+        <p class="item-sub">Brownies</p>
+        <p class="price">32,000</p>
+      </div>
+      <div class="quantity">1 🍫</div>
+    </div>
+    <div class="best-item">
+      <img src="cookies.webp" alt="Choco Strawberry Swirl">
+      <div>
+        <p class="item-title">Choco Strawberry Swirl</p>
+        <p class="item-sub">Cookies</p>
+        <p class="price">32,000</p>
+      </div>
+      <div class="quantity">1 🍪</div>
+    </div>
+  </section>
+
+  <nav class="category-tabs">
+    <button class="active">Brownies</button>
+    <button>Cupcake</button>
+    <button>Cookie</button>
+    <button>Cake</button>
+  </nav>
+
+  <section class="items-grid">
+    <div class="item-card">
+      <img src="nutella_br.jpg" alt="Nutella Hazelnut">
+      <p class="name">Nutella Hazelnut</p>
+      <p class="type">Brownie</p>
+      <p class="price">100.000</p>
+      <button class="add-btn">+</button>
+    </div>
+    <div class="item-card">
+      <img src="classic_br.jpg" alt="Classic Brownie">
+      <p class="name">Classic Brownie</p>
+      <p class="type">Brownie</p>
+      <p class="price">100.000</p>
+      <button class="add-btn">+</button>
+    </div>
+    <div class="item-card">
+      <img src="oreo_br.jpg" alt="Oreo Brownie">
+      <p class="name">Oreo</p>
+      <p class="type">Brownie</p>
+      <p class="price">100.000</p>
+      <button class="add-btn">+</button>
+    </div>
+    <div class="item-card">
+      <img src="ferrero_br.jpg" alt="Ferrero Rocher Brownie">
+      <p class="name">Ferrero Rocher</p>
+      <p class="type">Brownie</p>
+      <p class="price">100.000</p>
+      <button class="add-btn">+</button>
+    </div>
+    <div class="item-card">
+      <img src="biscoff_br.jpg" alt="Biscoff Brownie">
+      <p class="name">Biscoff</p>
+      <p class="type">Brownie</p>
+      <p class="price">100.000</p>
+      <button class="add-btn">+</button>
+    </div>
+    <div class="item-card">
+      <img src="tripple_chocolate.jpg" alt="Triple Chocolate Brownie">
+      <p class="name">Triple Chocolate</p>
+      <p class="type">Brownie</p>
+      <p class="price">100.000</p>
+      <button class="add-btn">+</button>
+    </div>
+  </section>
+
+  <footer>
+    <button>🏠 Home</button>
+    <button>🛒 Cart</button>
+    <button>👤 Profile</button>
+  </footer>
+
+  <script>
+    // Script to toggle active category
+    const buttons = document.querySelectorAll('.category-tabs button');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+  </script>
+</body>
+
+</html>
