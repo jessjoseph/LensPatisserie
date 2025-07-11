@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lens Pâtisserie</title>
   <style>
     * {
@@ -43,7 +43,7 @@
     }
 
     .best-of-today {
-      padding: 10px;
+      padding: 10px 15px;
     }
 
     .best-of-today h2 {
@@ -112,51 +112,72 @@
 
     .items-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, 1fr);
       gap: 15px;
       padding: 15px;
     }
 
+    @media screen and (min-width: 768px) {
+      .items-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
     .item-card {
-      background: #fff5f5;
-      border-radius: 10px;
-      padding: 10px;
-      text-align: center;
+      border: 1px solid #e0e0e0;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #fff;
       position: relative;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s ease;
+    }
+
+    .item-card:hover {
+      transform: scale(1.01);
     }
 
     .item-card img {
       width: 100%;
-      border-radius: 8px;
-      height: 100px;
+      height: 150px;
       object-fit: cover;
     }
 
-    .name {
+    .item-card .name {
+      font-size: 16px;
       font-weight: bold;
-      margin: 5px 0;
+      color: #333;
+      margin: 8px 0 2px 0;
+      padding: 0 10px;
     }
 
-    .type {
-      font-size: 12px;
-      color: #888;
+    .item-card .type {
+      font-size: 13px;
+      color: #996633;
+      padding: 0 10px;
     }
 
-    .price {
-      font-size: 14px;
+    .item-card .price {
+      font-size: 16px;
       font-weight: bold;
+      color: #4d2e1a;
+      padding: 0 10px 10px 10px;
     }
 
     .add-btn {
       position: absolute;
       bottom: 10px;
       right: 10px;
-      background: #aa4444;
-      color: white;
-      border: none;
+      width: 30px;
+      height: 30px;
+      background: #4d2e1a;
       border-radius: 50%;
-      padding: 5px 10px;
-      font-size: 16px;
+      color: white;
+      font-size: 18px;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       cursor: pointer;
     }
 
@@ -174,101 +195,122 @@
 </head>
 
 <body>
-
   <header>
-    <p class="address">248, 1st B main, 5th cross, 2nd Main, Ahmednagar, Bengaluru 560077</p>
-    <p class="timing">Daily 10AM-9PM</p>
+
     <h1 class="brand">LENS PÂTISSERIE</h1>
   </header>
 
   <section class="best-of-today">
     <h2>Best of Today</h2>
     <div class="best-item">
-      <img src="brownies.jpg" alt="Brownies with bite of choco">
+      <img src="brownies.jpg" alt="Brownies">
       <div>
-        <p class="item-title">Brownies with bite of Choco</p>
-        <p class="item-sub">Brownies</p>
-        <p class="price">32,000</p>
+        <p class="item-title">Brownies with Bite of Choco</p>
+        <p class="item-sub">Brownies Box Of 6 PCS</p>
+        <p class="price">110-150/-</p>
       </div>
-      <div class="quantity">1 🍫</div>
+      <div class="quantity"> </div>
     </div>
     <div class="best-item">
-      <img src="cookies.webp" alt="Choco Strawberry Swirl">
+      <img src="cookies.webp" alt="Cookies">
       <div>
         <p class="item-title">Choco Strawberry Swirl</p>
-        <p class="item-sub">Cookies</p>
-        <p class="price">32,000</p>
+        <p class="item-sub">Cookie Box Of 6 PCS</p>
+        <p class="price">325-410/-</p>
       </div>
-      <div class="quantity">1 🍪</div>
+      <div class="quantity"> </div>
     </div>
   </section>
 
   <nav class="category-tabs">
-    <button class="active">Brownies</button>
-    <button>Cupcake</button>
-    <button>Cookie</button>
-    <button>Cake</button>
+    <button class="active" data-category="brownies">Brownies</button>
+    <button data-category="cupcake">Cupcake</button>
+    <button data-category="cookie">Cookie</button>
+    <button data-category="cake">Cake</button>
   </nav>
 
-  <section class="items-grid">
-    <div class="item-card">
-      <img src="nutella_br.jpg" alt="Nutella Hazelnut">
-      <p class="name">Nutella Hazelnut</p>
-      <p class="type">Brownie</p>
-      <p class="price">100.000</p>
-      <button class="add-btn">+</button>
-    </div>
-    <div class="item-card">
-      <img src="classic_br.jpg" alt="Classic Brownie">
-      <p class="name">Classic Brownie</p>
-      <p class="type">Brownie</p>
-      <p class="price">100.000</p>
-      <button class="add-btn">+</button>
-    </div>
-    <div class="item-card">
-      <img src="oreo_br.jpg" alt="Oreo Brownie">
-      <p class="name">Oreo</p>
-      <p class="type">Brownie</p>
-      <p class="price">100.000</p>
-      <button class="add-btn">+</button>
-    </div>
-    <div class="item-card">
-      <img src="ferrero_br.jpg" alt="Ferrero Rocher Brownie">
-      <p class="name">Ferrero Rocher</p>
-      <p class="type">Brownie</p>
-      <p class="price">100.000</p>
-      <button class="add-btn">+</button>
-    </div>
-    <div class="item-card">
-      <img src="biscoff_br.jpg" alt="Biscoff Brownie">
-      <p class="name">Biscoff</p>
-      <p class="type">Brownie</p>
-      <p class="price">100.000</p>
-      <button class="add-btn">+</button>
-    </div>
-    <div class="item-card">
-      <img src="tripple_chocolate.jpg" alt="Triple Chocolate Brownie">
-      <p class="name">Triple Chocolate</p>
-      <p class="type">Brownie</p>
-      <p class="price">100.000</p>
-      <button class="add-btn">+</button>
-    </div>
-  </section>
+
+  <section class="category-content"></section>
 
   <footer>
-    <button>🏠 Home</button>
-    <button>🛒 Cart</button>
-    <button>👤 Profile</button>
+    <button>Home</button>
+    <button>Cart</button>
+    <button>Profile</button>
   </footer>
 
   <script>
-    // Script to toggle active category
-    const buttons = document.querySelectorAll('.category-tabs button');
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        buttons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
+    const categoryButtons = document.querySelectorAll(".category-tabs button");
+    const contentSection = document.querySelector(".category-content");
+
+    const data = {
+      brownies: `
+        <div class="items-grid">
+          <div class="item-card"><img src="nutella_br.jpg"><p class="name">Nutella Hazelnut</p><p class="type">Brownie</p><p class="price">100.000</p></div>
+          <div class="item-card"><img src="classic_br.jpg"><p class="name">Classic Brownie</p><p class="type">Brownie</p><p class="price">100.000</p></div>
+          <div class="item-card"><img src="oreo_br.jpg"><p class="name">Oreo</p><p class="type">Brownie</p><p class="price">100.000</p></div>
+          <div class="item-card"><img src="ferrero_br.jpg"><p class="name">Ferrero Rocher</p><p class="type">Brownie</p><p class="price">100.000</p></div>
+          <div class="item-card"><img src="biscoff_br.jpg"><p class="name">Biscoff</p><p class="type">Brownie</p><p class="price">100.000</p></div>
+          <div class="item-card"><img src="tripple_chocolate.jpg"><p class="name">Triple Chocolate</p><p class="type">Brownie</p><p class="price">100.000</p></div>
+        </div>
+      `,
+      cupcake: `
+        <div class="items-grid">
+          <div class="item-card"><img src="chocolate_ganache_cc.jpg"><p class="name">Chocolate Ganache</p><p class="type">Box of 6</p><p class="price">360/-</p></div>
+          <div class="item-card"><img src="nutella_cc.jpg"><p class="name">Nutella</p><p class="type">Box of 6</p><p class="price">400/-</p></div>
+          <div class="item-card"><img src="red_velvet_cc.jpg"><p class="name">Red Velvet w/ Cream Cheese</p><p class="type">Box of 6</p><p class="price">360/-</p></div>
+          <div class="item-card"><img src="biscoff_cc.jpg"><p class="name">Lotus Biscoff</p><p class="type">Box of 6</p><p class="price">410/-</p></div>
+          <div class="item-card"><img src="caramel_cc.jpg"><p class="name">(Salted) Caramel</p><p class="type">Box of 6</p><p class="price">360/-</p></div>
+          <div class="item-card"><img src="blueberry_cc.jpg"><p class="name">Blueberry</p><p class="type">Box of 6</p><p class="price">400/-</p></div>
+          <div class="item-card"><img src="strawberry_cc.jpg"><p class="name">Strawberry</p><p class="type">Box of 6</p><p class="price">380/-</p></div>
+          <div class="item-card"><img src="mango_cc.jpg"><p class="name">Mango</p><p class="type">Box of 6</p><p class="price">390/-</p></div>
+          <div class="item-card"><img src="tres_leche_cc.jpg"><p class="name">Tres Leches</p><p class="type">Box of 6</p><p class="price">420/-</p></div>
+          <div class="item-card"><img src="rasmalai_cc.jpg"><p class="name">Rasmalai</p><p class="type">Box of 6</p><p class="price">350/-</p></div>
+        </div>
+      `,
+      cookie: `
+        <div class="items-grid">
+          <div class="item-card"><img src="chunk.jpg"><p class="name">Chocolate Chunk</p><p class="type">Box of 6</p><p class="price">360/-</p></div>
+          <div class="item-card"><img src="double_choco.jpg"><p class="name">Double Chocolate</p><p class="type">Box of 6</p><p class="price">390/-</p></div>
+          <div class="item-card"><img src="triple_choco.jpg"><p class="name">Triple Chocolate</p><p class="type">Box of 6</p><p class="price">410/-</p></div>
+          <div class="item-card"><img src="butter.jpg"><p class="name">Butter Cookies</p><p class="type">Box of 6</p><p class="price">350/-</p></div>
+          <div class="item-card"><img src="ajwain.jpg"><p class="name">Ajwain Cookies</p><p class="type">Box of 6</p><p class="price">325/-</p></div>
+        </div>
+      `,
+      cake: `
+        <div class="items-grid">
+          <div class="item-card"><img src="classic_choc.jpg"><p class="name">Classic Chocolate Cake</p><p class="type">1kg</p><p class="price">1400/-</p></div>
+          <div class="item-card"><img src="coconut_mango.jpg"><p class="name">Coconut Mango Cake</p><p class="type">1kg</p><p class="price">1600/-</p></div>
+          <div class="item-card"><img src="vanilla_salted.jpg"><p class="name">Vanilla Salted Caramel</p><p class="type">1kg</p><p class="price">1450/-</p></div>
+          <div class="item-card"><img src="choco_strawberry.jpg"><p class="name">Chocolate w/ Strawberry</p><p class="type">1kg</p><p class="price">1600/-</p></div>
+          <div class="item-card"><img src="all_choc.jpg"><p class="name">All Things Chocolate</p><p class="type">1kg</p><p class="price">1560/-</p></div>
+          <div class="item-card"><img src="cherry.jpg"><p class="name">Chocolate Cherry</p><p class="type">1kg</p><p class="price">1430/-</p></div>
+          <div class="item-card"><img src="lotus.jpg"><p class="name">Lotus Biscoff</p><p class="type">1kg</p><p class="price">1600/-</p></div>
+          <div class="item-card"><img src="choco_biscoff.jpg"><p class="name">Choco Biscoff Cake</p><p class="type">1kg</p><p class="price">1680/-</p></div>
+          <div class="item-card"><img src="salted_cake.jpg"><p class="name">Choco Salted Caramel</p><p class="type">1kg</p><p class="price">1550/-</p></div>
+          <div class="item-card"><img src="hazelnut.jpg"><p class="name">Hazelnut Praline</p><p class="type">1kg</p><p class="price">1750/-</p></div>
+          <div class="item-card"><img src="blueberry_lemon.jpg"><p class="name">Blueberry Lemon</p><p class="type">1kg</p><p class="price">1620/-</p></div>
+          <div class="item-card"><img src="strawberry_cake.jpg"><p class="name">Strawberry Cake</p><p class="type">1kg</p><p class="price">1550/-</p></div>
+          <div class="item-card"><img src="rasmalai_cake.jpg"><p class="name">Rasmalai Cake</p><p class="type">1kg</p><p class="price">1600/-</p></div>
+          <div class="item-card"><img src="rosemilk.jpg"><p class="name">Rosemilk & Pistachio</p><p class="type">1kg</p><p class="price">1600/-</p></div>
+        </div>
+      `
+    };
+
+    function setCategoryContent(category) {
+      contentSection.innerHTML = data[category];
+    }
+
+    categoryButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        categoryButtons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        const selected = btn.dataset.category;
+        setCategoryContent(selected);
       });
+    });
+
+    window.addEventListener("DOMContentLoaded", () => {
+      setCategoryContent("brownies");
     });
   </script>
 </body>
