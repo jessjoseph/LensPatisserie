@@ -233,68 +233,68 @@
   <section class="category-content"></section>
 
   <footer>
-    <button>Home</button>
-    <button>Cart</button>
-    <button>Profile</button>
-  </footer>
+  <button onclick="location.href='home.html'"><img src="Home-icon.png" alt="Home" style="width: 24px; height: 24px;"></button>
+  <button onclick="location.href='cart.html'"><img src="cart-icon.png" alt="Cart" style="width: 24px; height: 24px;"></button>
+  <button onclick="location.href='profile.html'"><img src="profile-icon.png" alt="Profile" style="width: 24px; height: 24px;"></button>
+</footer>
 
   <script>
     const categoryButtons = document.querySelectorAll(".category-tabs button");
     const contentSection = document.querySelector(".category-content");
 
     const data = {
-      brownies: `
-        <div class="items-grid">
-          <div class="item-card"><img src="nutella_br.jpg"><p class="name">Nutella Hazelnut</p><p class="type">Brownie</p><p class="price">100.000</p></div>
-          <div class="item-card"><img src="classic_br.jpg"><p class="name">Classic Brownie</p><p class="type">Brownie</p><p class="price">100.000</p></div>
-          <div class="item-card"><img src="oreo_br.jpg"><p class="name">Oreo</p><p class="type">Brownie</p><p class="price">100.000</p></div>
-          <div class="item-card"><img src="ferrero_br.jpg"><p class="name">Ferrero Rocher</p><p class="type">Brownie</p><p class="price">100.000</p></div>
-          <div class="item-card"><img src="biscoff_br.jpg"><p class="name">Biscoff</p><p class="type">Brownie</p><p class="price">100.000</p></div>
-          <div class="item-card"><img src="tripple_chocolate.jpg"><p class="name">Triple Chocolate</p><p class="type">Brownie</p><p class="price">100.000</p></div>
-        </div>
-      `,
-      cupcake: `
-        <div class="items-grid">
-          <div class="item-card"><img src="chocolate_ganache_cc.jpg"><p class="name">Chocolate Ganache</p><p class="type">Box of 6</p><p class="price">360/-</p></div>
-          <div class="item-card"><img src="nutella_cc.jpg"><p class="name">Nutella</p><p class="type">Box of 6</p><p class="price">400/-</p></div>
-          <div class="item-card"><img src="red_velvet_cc.jpg"><p class="name">Red Velvet w/ Cream Cheese</p><p class="type">Box of 6</p><p class="price">360/-</p></div>
-          <div class="item-card"><img src="biscoff_cc.jpg"><p class="name">Lotus Biscoff</p><p class="type">Box of 6</p><p class="price">410/-</p></div>
-          <div class="item-card"><img src="caramel_cc.jpg"><p class="name">(Salted) Caramel</p><p class="type">Box of 6</p><p class="price">360/-</p></div>
-          <div class="item-card"><img src="blueberry_cc.jpg"><p class="name">Blueberry</p><p class="type">Box of 6</p><p class="price">400/-</p></div>
-          <div class="item-card"><img src="strawberry_cc.jpg"><p class="name">Strawberry</p><p class="type">Box of 6</p><p class="price">380/-</p></div>
-          <div class="item-card"><img src="mango_cc.jpg"><p class="name">Mango</p><p class="type">Box of 6</p><p class="price">390/-</p></div>
-          <div class="item-card"><img src="tres_leche_cc.jpg"><p class="name">Tres Leches</p><p class="type">Box of 6</p><p class="price">420/-</p></div>
-          <div class="item-card"><img src="rasmalai_cc.jpg"><p class="name">Rasmalai</p><p class="type">Box of 6</p><p class="price">350/-</p></div>
-        </div>
-      `,
-      cookie: `
-        <div class="items-grid">
-          <div class="item-card"><img src="chunk.jpg"><p class="name">Chocolate Chunk</p><p class="type">Box of 6</p><p class="price">360/-</p></div>
-          <div class="item-card"><img src="double_choco.jpg"><p class="name">Double Chocolate</p><p class="type">Box of 6</p><p class="price">390/-</p></div>
-          <div class="item-card"><img src="triple_choco.jpg"><p class="name">Triple Chocolate</p><p class="type">Box of 6</p><p class="price">410/-</p></div>
-          <div class="item-card"><img src="butter.jpg"><p class="name">Butter Cookies</p><p class="type">Box of 6</p><p class="price">350/-</p></div>
-          <div class="item-card"><img src="ajwain.jpg"><p class="name">Ajwain Cookies</p><p class="type">Box of 6</p><p class="price">325/-</p></div>
-        </div>
-      `,
-      cake: `
-        <div class="items-grid">
-          <div class="item-card"><img src="classic_choc.jpg"><p class="name">Classic Chocolate Cake</p><p class="type">1kg</p><p class="price">1400/-</p></div>
-          <div class="item-card"><img src="coconut_mango.jpg"><p class="name">Coconut Mango Cake</p><p class="type">1kg</p><p class="price">1600/-</p></div>
-          <div class="item-card"><img src="vanilla_salted.jpg"><p class="name">Vanilla Salted Caramel</p><p class="type">1kg</p><p class="price">1450/-</p></div>
-          <div class="item-card"><img src="choco_strawberry.jpg"><p class="name">Chocolate w/ Strawberry</p><p class="type">1kg</p><p class="price">1600/-</p></div>
-          <div class="item-card"><img src="all_choc.jpg"><p class="name">All Things Chocolate</p><p class="type">1kg</p><p class="price">1560/-</p></div>
-          <div class="item-card"><img src="cherry.jpg"><p class="name">Chocolate Cherry</p><p class="type">1kg</p><p class="price">1430/-</p></div>
-          <div class="item-card"><img src="lotus.jpg"><p class="name">Lotus Biscoff</p><p class="type">1kg</p><p class="price">1600/-</p></div>
-          <div class="item-card"><img src="choco_biscoff.jpg"><p class="name">Choco Biscoff Cake</p><p class="type">1kg</p><p class="price">1680/-</p></div>
-          <div class="item-card"><img src="salted_cake.jpg"><p class="name">Choco Salted Caramel</p><p class="type">1kg</p><p class="price">1550/-</p></div>
-          <div class="item-card"><img src="hazelnut.jpg"><p class="name">Hazelnut Praline</p><p class="type">1kg</p><p class="price">1750/-</p></div>
-          <div class="item-card"><img src="blueberry_lemon.jpg"><p class="name">Blueberry Lemon</p><p class="type">1kg</p><p class="price">1620/-</p></div>
-          <div class="item-card"><img src="strawberry_cake.jpg"><p class="name">Strawberry Cake</p><p class="type">1kg</p><p class="price">1550/-</p></div>
-          <div class="item-card"><img src="rasmalai_cake.jpg"><p class="name">Rasmalai Cake</p><p class="type">1kg</p><p class="price">1600/-</p></div>
-          <div class="item-card"><img src="rosemilk.jpg"><p class="name">Rosemilk & Pistachio</p><p class="type">1kg</p><p class="price">1600/-</p></div>
-        </div>
-      `
-    };
+  brownies: `
+    <div class="items-grid">
+      <div class="item-card"><img src="nutella_br.jpg"><p class="name">Nutella Hazelnut</p><p class="type">Brownie</p><p class="price">100</p><button class="add-btn" onclick="addToCart('Nutella Hazelnut', 100)">+</button></div>
+      <div class="item-card"><img src="classic_br.jpg"><p class="name">Classic Brownie</p><p class="type">Brownie</p><p class="price">100</p><button class="add-btn" onclick="addToCart('Classic Brownie', 100)">+</button></div>
+      <div class="item-card"><img src="oreo_br.jpg"><p class="name">Oreo</p><p class="type">Brownie</p><p class="price">100</p><button class="add-btn" onclick="addToCart('Oreo', 100)">+</button></div>
+      <div class="item-card"><img src="ferrero_br.jpg"><p class="name">Ferrero Rocher</p><p class="type">Brownie</p><p class="price">100</p><button class="add-btn" onclick="addToCart('Ferrero Rocher', 100)">+</button></div>
+      <div class="item-card"><img src="biscoff_br.jpg"><p class="name">Biscoff</p><p class="type">Brownie</p><p class="price">100</p><button class="add-btn" onclick="addToCart('Biscoff', 100)">+</button></div>
+      <div class="item-card"><img src="tripple_chocolate.jpg"><p class="name">Triple Chocolate</p><p class="type">Brownie</p><p class="price">100</p><button class="add-btn" onclick="addToCart('Triple Chocolate', 100)">+</button></div>
+    </div>
+  `,
+  cupcake: `
+    <div class="items-grid">
+      <div class="item-card"><img src="chocolate_ganache_cc.jpg"><p class="name">Chocolate Ganache</p><p class="type">Box of 6</p><p class="price">360</p><button class="add-btn" onclick="addToCart('Chocolate Ganache Cupcake', 360)">+</button></div>
+      <div class="item-card"><img src="nutella_cc.jpg"><p class="name">Nutella</p><p class="type">Box of 6</p><p class="price">400</p><button class="add-btn" onclick="addToCart('Nutella Cupcake', 400)">+</button></div>
+      <div class="item-card"><img src="red_velvet_cc.jpg"><p class="name">Red Velvet w/ Cream Cheese</p><p class="type">Box of 6</p><p class="price">360</p><button class="add-btn" onclick="addToCart('Red Velvet Cupcake', 360)">+</button></div>
+      <div class="item-card"><img src="biscoff_cc.jpg"><p class="name">Lotus Biscoff</p><p class="type">Box of 6</p><p class="price">410</p><button class="add-btn" onclick="addToCart('Lotus Biscoff Cupcake', 410)">+</button></div>
+      <div class="item-card"><img src="caramel_cc.jpg"><p class="name">(Salted) Caramel</p><p class="type">Box of 6</p><p class="price">360</p><button class="add-btn" onclick="addToCart('Salted Caramel Cupcake', 360)">+</button></div>
+      <div class="item-card"><img src="blueberry_cc.jpg"><p class="name">Blueberry</p><p class="type">Box of 6</p><p class="price">400</p><button class="add-btn" onclick="addToCart('Blueberry Cupcake', 400)">+</button></div>
+      <div class="item-card"><img src="strawberry_cc.jpg"><p class="name">Strawberry</p><p class="type">Box of 6</p><p class="price">380</p><button class="add-btn" onclick="addToCart('Strawberry Cupcake', 380)">+</button></div>
+      <div class="item-card"><img src="mango_cc.jpg"><p class="name">Mango</p><p class="type">Box of 6</p><p class="price">390</p><button class="add-btn" onclick="addToCart('Mango Cupcake', 390)">+</button></div>
+      <div class="item-card"><img src="tres_leche_cc.jpg"><p class="name">Tres Leches</p><p class="type">Box of 6</p><p class="price">420</p><button class="add-btn" onclick="addToCart('Tres Leches Cupcake', 420)">+</button></div>
+      <div class="item-card"><img src="rasmalai_cc.jpg"><p class="name">Rasmalai</p><p class="type">Box of 6</p><p class="price">350</p><button class="add-btn" onclick="addToCart('Rasmalai Cupcake', 350)">+</button></div>
+    </div>
+  `,
+  cookie: `
+    <div class="items-grid">
+      <div class="item-card"><img src="chunk.jpg"><p class="name">Chocolate Chunk</p><p class="type">Box of 6</p><p class="price">360</p><button class="add-btn" onclick="addToCart('Chocolate Chunk Cookies', 360)">+</button></div>
+      <div class="item-card"><img src="double_choco.jpg"><p class="name">Double Chocolate</p><p class="type">Box of 6</p><p class="price">390</p><button class="add-btn" onclick="addToCart('Double Chocolate Cookies', 390)">+</button></div>
+      <div class="item-card"><img src="triple_choco.jpg"><p class="name">Triple Chocolate</p><p class="type">Box of 6</p><p class="price">410</p><button class="add-btn" onclick="addToCart('Triple Chocolate Cookies', 410)">+</button></div>
+      <div class="item-card"><img src="butter.jpg"><p class="name">Butter Cookies</p><p class="type">Box of 6</p><p class="price">350</p><button class="add-btn" onclick="addToCart('Butter Cookies', 350)">+</button></div>
+      <div class="item-card"><img src="ajwain.jpg"><p class="name">Ajwain Cookies</p><p class="type">Box of 6</p><p class="price">325</p><button class="add-btn" onclick="addToCart('Ajwain Cookies', 325)">+</button></div>
+    </div>
+  `,
+  cake: `
+    <div class="items-grid">
+      <div class="item-card"><img src="classic_choc.jpg"><p class="name">Classic Chocolate Cake</p><p class="type">1kg</p><p class="price">1400</p><button class="add-btn" onclick="addToCart('Classic Chocolate Cake', 1400)">+</button></div>
+      <div class="item-card"><img src="coconut_mango.jpg"><p class="name">Coconut Mango Cake</p><p class="type">1kg</p><p class="price">1600</p><button class="add-btn" onclick="addToCart('Coconut Mango Cake', 1600)">+</button></div>
+      <div class="item-card"><img src="vanilla_salted.jpg"><p class="name">Vanilla Salted Caramel</p><p class="type">1kg</p><p class="price">1450</p><button class="add-btn" onclick="addToCart('Vanilla Salted Caramel Cake', 1450)">+</button></div>
+      <div class="item-card"><img src="choco_strawberry.jpg"><p class="name">Chocolate w/ Strawberry</p><p class="type">1kg</p><p class="price">1600</p><button class="add-btn" onclick="addToCart('Chocolate Strawberry Cake', 1600)">+</button></div>
+      <div class="item-card"><img src="all_choc.jpg"><p class="name">All Things Chocolate</p><p class="type">1kg</p><p class="price">1560</p><button class="add-btn" onclick="addToCart('All Things Chocolate Cake', 1560)">+</button></div>
+      <div class="item-card"><img src="cherry.jpg"><p class="name">Chocolate Cherry</p><p class="type">1kg</p><p class="price">1430</p><button class="add-btn" onclick="addToCart('Chocolate Cherry Cake', 1430)">+</button></div>
+      <div class="item-card"><img src="lotus.jpg"><p class="name">Lotus Biscoff</p><p class="type">1kg</p><p class="price">1600</p><button class="add-btn" onclick="addToCart('Lotus Biscoff Cake', 1600)">+</button></div>
+      <div class="item-card"><img src="choco_biscoff.jpg"><p class="name">Choco Biscoff Cake</p><p class="type">1kg</p><p class="price">1680</p><button class="add-btn" onclick="addToCart('Choco Biscoff Cake', 1680)">+</button></div>
+      <div class="item-card"><img src="salted_cake.jpg"><p class="name">Choco Salted Caramel</p><p class="type">1kg</p><p class="price">1550</p><button class="add-btn" onclick="addToCart('Choco Salted Caramel Cake', 1550)">+</button></div>
+      <div class="item-card"><img src="hazelnut.jpg"><p class="name">Hazelnut Praline</p><p class="type">1kg</p><p class="price">1750</p><button class="add-btn" onclick="addToCart('Hazelnut Praline Cake', 1750)">+</button></div>
+      <div class="item-card"><img src="blueberry_lemon.jpg"><p class="name">Blueberry Lemon</p><p class="type">1kg</p><p class="price">1620</p><button class="add-btn" onclick="addToCart('Blueberry Lemon Cake', 1620)">+</button></div>
+      <div class="item-card"><img src="strawberry_cake.jpg"><p class="name">Strawberry Cake</p><p class="type">1kg</p><p class="price">1550</p><button class="add-btn" onclick="addToCart('Strawberry Cake', 1550)">+</button></div>
+      <div class="item-card"><img src="rasmalai_cake.jpg"><p class="name">Rasmalai Cake</p><p class="type">1kg</p><p class="price">1600</p><button class="add-btn" onclick="addToCart('Rasmalai Cake', 1600)">+</button></div>
+      <div class="item-card"><img src="rosemilk.jpg"><p class="name">Rosemilk & Pistachio</p><p class="type">1kg</p><p class="price">1600</p><button class="add-btn" onclick="addToCart('Rosemilk & Pistachio Cake', 1600)">+</button></div>
+    </div>
+  `
+};
 
     function setCategoryContent(category) {
       contentSection.innerHTML = data[category];
