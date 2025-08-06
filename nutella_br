@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tiramisu | Lens Pâtisserie</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="top-bar">
+    <p>248, 1st B Main, 5th Cross, 2nd Main, Athmarvadiya Nagar, Bengaluru - 560077 | Daily 10AM–9PM</p>
+  </header>
+
+  <nav class="navbar">
+    <div class="logo">LENS PÂTISSERIE</div>
+    <div class="menu-toggle">☰</div>
+  </nav>
+
+  <main class="product-page">
+    <div class="product-image">
+      <img src="../images/biscoff_br.jpg" alt="Biscoff Brownie" class="brownie-img"/>
+    </div>
+
+    <div class="product-info">
+      <h1>Biscoff Brownie</h1>
+      <p class="description">Fudgy, rich chocolate brownie layered with creamy Biscoff spread and topped with a golden Lotus biscuit crunch. </p>
+      <p class="price">₹130.00</p>
+
+      <label for="size">Size</label>
+      <select id="size" name="size">
+        <option>Choose size</option>
+        <option>Small</option>
+        <option>Medium</option>
+        <option>Large</option>
+      </select>
+
+      <div class="quantity-cart">
+        <input type="number" value="1" min="1" />
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bottom-nav">
+    <a href="#">🏠 Home</a>
+    <a href="#">🛒 Cart</a>
+    <a href="#">👤 Profile</a>
+  </footer>
+</body>
+</html>
