@@ -232,11 +232,12 @@
 
   <section class="category-content"></section>
 
-  <footer>
+<footer>
   <button onclick="location.href='home.html'"><img src="Home-icon.png" alt="Home" style="width: 24px; height: 24px;"></button>
   <button onclick="location.href='cart.html'"><img src="cart-icon.png" alt="Cart" style="width: 24px; height: 24px;"></button>
   <button onclick="location.href='profile.html'"><img src="profile-icon.png" alt="Profile" style="width: 24px; height: 24px;"></button>
 </footer>
+
 
   <script>
     const categoryButtons = document.querySelectorAll(".category-tabs button");
@@ -295,7 +296,6 @@
     </div>
   `
 };
-
     function setCategoryContent(category) {
       contentSection.innerHTML = data[category];
     }
